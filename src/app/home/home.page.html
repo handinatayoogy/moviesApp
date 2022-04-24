@@ -1,20 +1,27 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title class="judul"> Movies </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-row>
+    <ion-col>
+      <ion-list>
+        <ion-item *ngFor="let item of data">
+          <img
+            src="https://image.tmdb.org/t/p/w500/{{ item.poster_path }}"
+            width="100px"
+            alt=""
+            class="img"
+          />
+          <div class="text">
+            <h2>{{ item.original_title }}</h2>
+            <p id="rating">Rating : {{ item.vote_average }}</p>
+            <p id="date" class="date">Release : {{ item.release_date }}</p>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
 </ion-content>
