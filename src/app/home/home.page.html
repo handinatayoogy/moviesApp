@@ -18,7 +18,9 @@
           <div class="text">
             <h2>{{ item.original_title }}</h2>
             <p id="rating">Rating : {{ item.vote_average }}</p>
-            <p id="date" class="date">Release : {{ item.release_date }}</p>
+            <p class="date">
+              Release : {{ item.release_date | date:'dd MMMM YYYY' }}
+            </p>
           </div>
         </ion-item>
       </ion-list>

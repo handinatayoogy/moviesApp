@@ -13,7 +13,6 @@ export class HomePage implements OnInit {
       .then((res) => res.json())
       .then((json) => {
         this.data = json['results'];
-        console.log(this.data);
       });
   }
 }
