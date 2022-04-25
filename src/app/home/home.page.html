@@ -1,6 +1,9 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title class="judul"> Movies </ion-title>
+    <ion-buttons slot="start">
+      <ion-icon name="film" size="large"> </ion-icon>
+    </ion-buttons>
+    <ion-title class="judul">Movies</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,7 +20,9 @@
           />
           <div class="text">
             <h2>{{ item.original_title }}</h2>
-            <p id="rating">Rating : {{ item.vote_average }}</p>
+            <p id="rating" [style.color]="changeColor(item.vote_average)">
+              Rating : {{ item.vote_average }}
+            </p>
             <p class="date">
               Release : {{ item.release_date | date:'dd MMMM YYYY' }}
             </p>

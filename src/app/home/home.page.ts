@@ -15,4 +15,14 @@ export class HomePage implements OnInit {
         this.data = json['results'];
       });
   }
+
+  changeColor(rating: number) {
+    if (rating > 7) {
+      return 'blue';
+    } else if (rating > 6 && rating <= 7) {
+      return 'green';
+    } else if (rating <= 6) {
+      return 'red';
+    }
+  }
 }
